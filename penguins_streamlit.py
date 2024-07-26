@@ -1,13 +1,12 @@
 import streamlit as st
 import pickle
-import matplotlib.pyplot as plt
-import seaborn as sns
+
 import pandas as pd
 
 st.title('Penguin Classifier')
 st.write("This app uses 6 inputs to predict the species of penguin using"
 "a model built on the Palmer Penguins dataset. Use the form below"" to get started!")
-st.image('feature_importance.png')
+#st.image('feature_importance.png')
 
 rf_pickle = open('random_forest_penguin.pickle', 'rb')
 map_pickle = open('output_penguin.pickle', 'rb')
@@ -52,27 +51,3 @@ used in this prediction are ranked by
 relative importance below."""
 )
 st.image('feature_importance.png')
-st.write(
-"""Below are the histograms for each
-continuous variable separated by penguin
-species. The vertical line represents
-your the inputted value."""
-)
-penguin_df = pd.read_csv('penguins.csv')
-fig, ax = plt.subplots()
-ax = sns.displot(x=penguin_df['bill_length_mm'],hue=penguin_df['species'])
-plt.axvline(bill_length)
-plt.title('Bill Length by Species')
-st.pyplot(ax)
-fig, ax = plt.subplots()
-ax = sns.displot(x=penguin_df['bill_depth_mm'],
-hue=penguin_df['species'])
-plt.axvline(bill_depth)
-plt.title('Bill Depth by Species')
-st.pyplot(ax)
-fig, ax = plt.subplots()
-ax = sns.displot(x=penguin_df['flipper_length_mm'],
-hue=penguin_df['species'])
-plt.axvline(flipper_length)
-plt.title('Flipper Length by Species')
-st.pyplot(ax)
