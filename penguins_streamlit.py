@@ -8,12 +8,12 @@ st.write("This app uses 6 inputs to predict the species of penguin using"
 "a model built on the Palmer Penguins dataset. Use the form below"" to get started!")
 #st.image('feature_importance.png')
 
-rf_pickle = open('random_forest_penguin.pickle', 'rb')
-map_pickle = open('output_penguin.pickle', 'rb')
-rfc = pickle.load(rf_pickle)
-unique_penguin_mapping = pickle.load(map_pickle)
-rf_pickle.close()
-map_pickle.close()
+# rf_pickle = open('random_forest_penguin.pickle', 'rb')
+# map_pickle = open('output_penguin.pickle', 'rb')
+# rfc = pickle.load(rf_pickle)
+# unique_penguin_mapping = pickle.load(map_pickle)
+# rf_pickle.close()
+# map_pickle.close()
 
 
 island = st.selectbox("Penguin Island", options=["Biscoe", "Dream","Torgerson"])
@@ -36,11 +36,11 @@ if sex == 'Female':
 elif sex == 'Male':
     sex_male = 1
     
-new_prediction = rfc.predict([[bill_length, bill_depth, flipper_length,
-                                body_mass, island_biscoe, island_dream,
-                                island_torgerson, sex_female, sex_male]])
-prediction_species = unique_penguin_mapping[new_prediction][0]
-st.write(f"We predict your penguin is of the {prediction_species}  species")
+# new_prediction = rfc.predict([[bill_length, bill_depth, flipper_length,
+#                                 body_mass, island_biscoe, island_dream,
+#                                 island_torgerson, sex_female, sex_male]])
+# prediction_species = unique_penguin_mapping[new_prediction][0]
+# st.write(f"We predict your penguin is of the {prediction_species}  species")
 # st.write(f"""the user inputs are {user_inputs}""".format())
 # st.write(rfc)
 st.write(unique_penguin_mapping)
