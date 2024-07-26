@@ -43,7 +43,7 @@ elif sex == 'Male':
 # st.write(f"We predict your penguin is of the {prediction_species}  species")
 # st.write(f"""the user inputs are {user_inputs}""".format())
 # st.write(rfc)
-st.write(unique_penguin_mapping)
+# st.write(unique_penguin_mapping)
 st.write(
 """We used a machine learning (Random Forest)
 model to predict the species, the features
